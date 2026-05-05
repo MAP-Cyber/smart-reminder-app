@@ -1,0 +1,457 @@
+[
+  {
+    "id": 1,
+    "message": "Buy milk when near grocery store",
+    "triggerType": "location",
+    "conditions": {
+      "time": "5pm",
+      "location": "White Plains, New York",
+      "radius": 5000,
+      "weather": "Sunny"
+    },
+    "createdAt": "2026-04-08T08:44:39.101Z",
+    "triggered": false
+  },
+  {
+    "id": 2,
+    "message": "Buy milk when near grocery store",
+    "triggerType": "location",
+    "conditions": {
+      "location": "grocery"
+    },
+    "createdAt": "2026-04-08T08:48:06.844Z",
+    "triggered": false
+  },
+  {
+    "id": 6,
+    "message": "go to school",
+    "triggerType": "time",
+    "conditions": {
+      "time": "00"
+    },
+    "createdAt": "2026-04-08T10:12:49.550Z",
+    "triggered": false
+  },
+  {
+    "id": 7,
+    "message": "get milke",
+    "triggerType": "combination",
+    "conditions": {
+      "time": "5pm",
+      "location": "White Plains"
+    },
+    "createdAt": "2026-04-08T10:14:44.373Z",
+    "triggered": false
+  },
+  {
+    "id": 10,
+    "message": "Buy Mike",
+    "triggerType": "time",
+    "conditions": {
+      "time": "00"
+    },
+    "createdAt": "2026-04-08T11:00:02.766Z",
+    "triggered": false
+  },
+  {
+    "id": 11,
+    "message": "Buy Food",
+    "triggerType": "time",
+    "conditions": {
+      "time": "14:30"
+    },
+    "createdAt": "2026-04-08T11:04:04.298Z",
+    "triggered": false
+  },
+  {
+    "id": 12,
+    "message": "Buy food",
+    "triggerType": "time",
+    "conditions": {
+      "time": "07:15"
+    },
+    "createdAt": "2026-04-08T11:15:46.641Z",
+    "triggered": false
+  },
+  {
+    "id": 13,
+    "message": "Buy Anything",
+    "triggerType": "time",
+    "conditions": {
+      "time": "07:18"
+    },
+    "createdAt": "2026-04-08T11:17:09.976Z",
+    "triggered": false
+  },
+  {
+    "id": 14,
+    "message": "Buy Book",
+    "triggerType": "time",
+    "conditions": {
+      "time": "23:54"
+    },
+    "createdAt": "2026-04-08T15:53:55.627Z",
+    "triggered": false
+  },
+  {
+    "id": 15,
+    "message": "Test ",
+    "triggerType": "time",
+    "conditions": {
+      "time": "11:56"
+    },
+    "createdAt": "2026-04-08T15:55:26.545Z",
+    "triggered": false
+  },
+  {
+    "id": 16,
+    "message": "Test 1",
+    "triggerType": "location",
+    "conditions": {
+      "location": "White Plains"
+    },
+    "createdAt": "2026-04-08T15:56:52.074Z",
+    "triggered": false
+  },
+  {
+    "id": 17,
+    "message": "The is a reminder test for when I get to Mville!",
+    "triggerType": "combination",
+    "conditions": {
+      "time": "13:00",
+      "location": "Purchase"
+    },
+    "createdAt": "2026-04-08T16:07:12.649Z",
+    "triggered": false
+  },
+  {
+    "id": 18,
+    "message": "The is a reminder test 1 for when I get to Mville!",
+    "triggerType": "location",
+    "conditions": {
+      "location": "Purchase"
+    },
+    "createdAt": "2026-04-08T16:09:29.594Z",
+    "triggered": false
+  },
+  {
+    "id": 19,
+    "message": "The is a reminder test 2 for when I get to Mville!",
+    "triggerType": "time",
+    "conditions": {
+      "time": "1:10",
+      "location": ""
+    },
+    "createdAt": "2026-04-08T16:11:01.299Z",
+    "triggered": false
+  },
+  {
+    "id": 20,
+    "message": "White Plains Test 1",
+    "triggerType": "location",
+    "conditions": {
+      "location": "White Plains"
+    },
+    "createdAt": "2026-04-09T17:40:51.973Z",
+    "triggered": false
+  },
+  {
+    "id": 21,
+    "message": "Purchase Test 1",
+    "triggerType": "location",
+    "conditions": {
+      "location": "Purchase "
+    },
+    "createdAt": "2026-04-09T17:41:58.767Z",
+    "triggered": false
+  },
+  {
+    "id": 22,
+    "message": "purchase Test",
+    "triggerType": "location",
+    "conditions": {
+      "location": "purchase "
+    },
+    "createdAt": "2026-04-09T18:23:35.328Z",
+    "triggered": false
+  },
+  {
+    "id": 23,
+    "message": "Purchase Test",
+    "triggerType": "location",
+    "conditions": {
+      "location": "Purchase "
+    },
+    "createdAt": "2026-04-09T18:25:08.094Z",
+    "triggered": false
+  },
+  {
+    "id": 24,
+    "message": "White Plains",
+    "triggerType": "location",
+    "conditions": {
+      "location": "White Plains"
+    },
+    "createdAt": "2026-04-09T18:26:16.446Z",
+    "triggered": false
+  },
+  {
+    "id": 25,
+    "message": "Mville test",
+    "triggerType": "location",
+    "conditions": {
+      "location": "2900 Purchase St, Purchase, NY 10577"
+    },
+    "createdAt": "2026-04-09T18:35:17.834Z",
+    "triggered": false
+  },
+  {
+    "id": 26,
+    "message": "Test Time",
+    "triggerType": "time",
+    "conditions": {
+      "time": "14:40"
+    },
+    "createdAt": "2026-04-09T18:40:25.368Z",
+    "triggered": false
+  },
+  {
+    "id": 27,
+    "message": "Test time 2",
+    "triggerType": "time",
+    "conditions": {
+      "time": "14:43"
+    },
+    "createdAt": "2026-04-09T18:42:35.263Z",
+    "triggered": false
+  },
+  {
+    "id": 28,
+    "message": "location Test ",
+    "triggerType": "location",
+    "conditions": {
+      "location": "2900 Purchase St, Purchase, New York 10577"
+    },
+    "createdAt": "2026-04-09T18:46:34.526Z",
+    "triggered": false
+  },
+  {
+    "id": 29,
+    "message": "Location test ",
+    "triggerType": "location",
+    "conditions": {
+      "location": "Purchase"
+    },
+    "createdAt": "2026-04-09T18:54:59.410Z",
+    "triggered": false
+  },
+  {
+    "id": 30,
+    "message": "Location and Time Test",
+    "triggerType": "combination",
+    "conditions": {
+      "time": "15:38",
+      "location": "Purchase"
+    },
+    "createdAt": "2026-04-09T19:37:13.996Z",
+    "triggered": false
+  },
+  {
+    "id": 31,
+    "message": "Location and Time Test",
+    "triggerType": "combination",
+    "conditions": {
+      "time": "15:40",
+      "location": "Purchase"
+    },
+    "createdAt": "2026-04-09T19:39:43.368Z",
+    "triggered": false
+  },
+  {
+    "id": 32,
+    "message": "Location Test 1",
+    "triggerType": "location",
+    "conditions": {
+      "location": "Purchase"
+    },
+    "createdAt": "2026-04-09T19:40:48.080Z",
+    "triggered": false
+  },
+  {
+    "id": 33,
+    "message": "Location",
+    "triggerType": "location",
+    "conditions": {
+      "location": "Purchase"
+    },
+    "createdAt": "2026-04-09T19:54:37.665Z",
+    "triggered": false
+  },
+  {
+    "id": 34,
+    "message": "Time Test 3",
+    "triggerType": "time",
+    "conditions": {
+      "time": "15:56"
+    },
+    "createdAt": "2026-04-09T19:56:54.817Z",
+    "triggered": false
+  },
+  {
+    "id": 35,
+    "message": "Time Test 4",
+    "triggerType": "time",
+    "conditions": {
+      "time": "15:58"
+    },
+    "createdAt": "2026-04-09T19:57:36.062Z",
+    "triggered": false
+  },
+  {
+    "id": 36,
+    "message": "Test AM/PM time",
+    "triggerType": "time",
+    "conditions": {
+      "time": "00:44"
+    },
+    "createdAt": "2026-04-15T04:43:36.837Z",
+    "triggered": false
+  },
+  {
+    "id": 37,
+    "message": "Weather test",
+    "triggerType": "weather",
+    "conditions": {
+      "weather": "clear"
+    },
+    "createdAt": "2026-04-15T04:47:10.750Z",
+    "triggered": false
+  },
+  {
+    "id": 38,
+    "message": "Weather test",
+    "triggerType": "weather",
+    "conditions": {
+      "weather": "clouds"
+    },
+    "createdAt": "2026-04-15T04:48:29.140Z",
+    "triggered": false
+  },
+  {
+    "id": 39,
+    "message": "Combo test",
+    "triggerType": "combination",
+    "conditions": {
+      "time": "00:58",
+      "location": "White Plains",
+      "weather": "Clouds"
+    },
+    "createdAt": "2026-04-15T04:57:38.863Z",
+    "triggered": false
+  },
+  {
+    "id": 40,
+    "message": "Time test",
+    "triggerType": "time",
+    "conditions": {
+      "time": "01:02"
+    },
+    "createdAt": "2026-04-15T05:01:10.065Z",
+    "triggered": false
+  },
+  {
+    "id": 41,
+    "message": "Time Test 2",
+    "triggerType": "time",
+    "conditions": {
+      "time": "01:09",
+      "location": ""
+    },
+    "createdAt": "2026-04-15T05:07:29.418Z",
+    "triggered": false
+  },
+  {
+    "id": 42,
+    "message": "Weather Test",
+    "triggerType": "weather",
+    "conditions": {
+      "weather": "temp=67"
+    },
+    "createdAt": "2026-04-15T08:48:24.175Z",
+    "triggered": false
+  },
+  {
+    "id": 43,
+    "message": "Weather Test 1",
+    "triggerType": "weather",
+    "conditions": {
+      "weather": "temp>67"
+    },
+    "createdAt": "2026-04-15T08:53:36.844Z",
+    "triggered": false
+  },
+  {
+    "id": 44,
+    "message": "Weather Test 2",
+    "triggerType": "weather",
+    "conditions": {
+      "time": "",
+      "weather": "temp<67"
+    },
+    "createdAt": "2026-04-15T08:55:44.743Z",
+    "triggered": false
+  },
+  {
+    "id": 45,
+    "message": "This is a weather and time test for when I leave for college ",
+    "triggerType": "combination",
+    "conditions": {
+      "time": "12:00",
+      "weather": "Temp>70"
+    },
+    "createdAt": "2026-04-15T10:12:20.650Z",
+    "triggered": false
+  },
+  {
+    "id": 46,
+    "message": "This is a weather, time and location test for when I get to college",
+    "triggerType": "combination",
+    "conditions": {
+      "time": "13:00",
+      "location": "Purchase",
+      "weather": "Temp>67"
+    },
+    "createdAt": "2026-04-15T10:15:40.698Z",
+    "triggered": false
+  },
+  {
+    "id": 47,
+    "message": "Location Test for when I get to College",
+    "triggerType": "location",
+    "conditions": {
+      "location": "Purchase"
+    },
+    "createdAt": "2026-04-15T10:18:45.553Z",
+    "triggered": false
+  },
+  {
+    "id": 48,
+    "message": "Location Test for when I get to College",
+    "triggerType": "location",
+    "conditions": {
+      "location": "Purchase"
+    },
+    "createdAt": "2026-04-15T10:18:53.462Z",
+    "triggered": false
+  },
+  {
+    "id": 1776872951256,
+    "message": "At at 11:50 Am remind me to get water",
+    "triggerType": "time",
+    "conditions": {
+      "time": "11:50"
+    },
+    "createdAt": "2026-04-22T15:49:11.256Z",
+    "triggered": false
+  }
+]

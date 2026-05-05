@@ -1,0 +1,418 @@
+=== find_nearby_places called ===
+place_type=restaurant, location=undefined, radius=5000, keyword=undefined
+API key present: false
+Catch error: Google Places API key not configured
+=== find_nearby_places called ===
+place_type=restaurant, location=white plains, radius=5000, keyword=undefined
+API key present: false
+Catch error: Google Places API key not configured
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, radius=5000, keyword=undefined
+API key present: false
+Catch error: Google Places API key not configured
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, radius=5000, keyword=undefined
+API key present: false
+Catch error: Google Places API key not configured
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, radius=5000, keyword=undefined
+API key present: false
+Catch error: Google Places API key not configured
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, radius=5000, keyword=undefined
+API key present: false
+Catch error: Google Places API key not configured
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, radius=5000, keyword=undefined
+API key present: false
+Catch error: Google Places API key not configured
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, radius=5000, keyword=undefined
+API key present: false
+Catch error: Google Places API key not configured
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, radius=2001, keyword=undefined
+API key present: false
+Catch error: Google Places API key not configured
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=undefined, radius=5000, keyword=undefined
+API key present: false
+Catch error: Google Places API key not configured
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=undefined, radius=5000, keyword=undefined
+API key present: false
+Catch error: Google Places API key not configured
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=undefined, radius=5000, keyword=undefined
+API key present: true
+No location provided, using IP
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0145,-73.8726&radius=5000&type=restaurant&key=HIDDEN
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=white plains, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: white plains
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=white plains, radius=5000, keyword=pizza
+API key present: true
+Geocoding location: white plains
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN&keyword=pizza
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=1 city place, white plains, new york, radius=5000, keyword=pizza
+API key present: true
+Geocoding location: 1 city place, white plains, new york
+Geocode status: OK
+Coordinates: 41.0328014, -73.7651712
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0328014,-73.7651712&radius=5000&type=restaurant&key=HIDDEN&keyword=pizza
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=1 city place, white plains, new york, radius=1999, keyword=pizza
+API key present: true
+Geocoding location: 1 city place, white plains, new york
+Geocode status: OK
+Coordinates: 41.0328014, -73.7651712
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0328014,-73.7651712&radius=1999&type=restaurant&key=HIDDEN&keyword=pizza
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=1 city place white plains, radius=5000, keyword=pizza
+API key present: true
+Geocoding location: 1 city place white plains
+Geocode status: OK
+Coordinates: 41.0328014, -73.7651712
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0328014,-73.7651712&radius=5000&type=restaurant&key=HIDDEN&keyword=pizza
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=1 city place white plains, radius=5000, keyword=pizza
+API key present: true
+Geocoding location: 1 city place white plains
+Geocode status: OK
+Coordinates: 41.0328014, -73.7651712
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0328014,-73.7651712&radius=5000&type=restaurant&key=HIDDEN&keyword=pizza
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=undefined, radius=5000, keyword=undefined
+API key present: false
+Catch error: Google Places API key not configured
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=undefined, radius=5000, keyword=undefined
+API key present: false
+Catch error: Google Places API key not configured
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=1 city place white plains, radius=2000, keyword=pizza
+API key present: true
+Geocoding location: 1 city place white plains
+Geocode status: OK
+Coordinates: 41.0328014, -73.7651712
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0328014,-73.7651712&radius=2000&type=restaurant&key=HIDDEN&keyword=pizza
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=1 city place, white plains, radius=2000, keyword=undefined
+API key present: true
+Geocoding location: 1 city place, white plains
+Geocode status: OK
+Coordinates: 41.0328014, -73.7651712
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0328014,-73.7651712&radius=2000&type=restaurant&key=HIDDEN
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=1 city place, white plains, radius=2000, keyword=undefined
+API key present: true
+Geocoding location: 1 city place, white plains
+Geocode status: OK
+Coordinates: 41.0328014, -73.7651712
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0328014,-73.7651712&radius=2000&type=restaurant&key=HIDDEN
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=1 city place, white plains, radius=2000, keyword=pizza
+API key present: true
+Geocoding location: 1 city place, white plains
+Geocode status: OK
+Coordinates: 41.0328014, -73.7651712
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0328014,-73.7651712&radius=2000&type=restaurant&key=HIDDEN&keyword=pizza
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=hotel, location=White Plains, New York, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=lodging&key=HIDDEN
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=hotel, location=White Plains, New York, radius=5000, keyword=Hotal
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=lodging&key=HIDDEN&keyword=Hotal
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=cafe, location=White Plains, New York, radius=5000, keyword=star Bucks
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=cafe&key=HIDDEN&keyword=star%20Bucks
+Places API status: OK
+Returning 5 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, New York, radius=5000, keyword=Pizza
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN&keyword=Pizza
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, New York, radius=5000, keyword=Pizza
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN&keyword=Pizza
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, New York, radius=5000, keyword=Pizza
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN&keyword=Pizza
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, New York, radius=5000, keyword=Pizza
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN&keyword=Pizza
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=hotel, location=White Plains, New York, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=lodging&key=HIDDEN
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=hotel, location=White Plains, New York, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=lodging&key=HIDDEN
+Places API status: OK
+Returning 9 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=hotel, location=White Plains, New York, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=lodging&key=HIDDEN
+Places API status: OK
+Returning 9 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=hotel, location=White Plains, New York, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=lodging&key=HIDDEN
+Places API status: OK
+Returning 2 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=hotel, location=White Plains, New York, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=lodging&key=HIDDEN
+Places API status: OK
+Returning 9 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=hotel, location=White Plains, New York, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=lodging&key=HIDDEN
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, New York, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, New York, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN
+Places API status: OK
+Returning 0 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, New York, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, New York, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, New York, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN
+Places API status: OK
+Returning 3 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, New York, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, New York, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, New York, radius=5000, keyword=Pizza
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN&keyword=Pizza
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, New York, radius=5000, keyword=Pizza
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN&keyword=Pizza
+Places API status: OK
+Returning 2 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, New York, radius=5000, keyword=Pizza
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN&keyword=Pizza
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, New York, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains, New York
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN
+Places API status: OK
+Returning 10 results
+Current working directory: C:\Users\popal\Smart Reminder App Development\01-mcp-prototype
+=== find_nearby_places called ===
+place_type=restaurant, location=White Plains, radius=5000, keyword=undefined
+API key present: true
+Geocoding location: White Plains
+Geocode status: OK
+Coordinates: 41.0332209, -73.7650415
+Places URL: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0332209,-73.7650415&radius=5000&type=restaurant&key=HIDDEN
+Places API status: OK
+Returning 10 results
