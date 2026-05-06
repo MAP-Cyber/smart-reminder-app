@@ -1044,18 +1044,15 @@ async function main() {
     await connectDB();
     // Choose transport based on command line arguments
     if (useSSE) {
-        const app = express();
-        let transport;
-        app.get("/sse", async (req, res) => {
-            transport = new SSEServerTransport("/messages", res);
+        // Add SSE routes to restApp instead of separate app
+        restApp.get("/sse", async (req, res) => {
+            const transport = new SSEServerTransport("/messages", res);
             await server.connect(transport);
         });
-        app.post("/messages", async (req, res) => {
-            await transport.handlePostMessage(req, res);
+        restApp.post("/messages", async (req, res) => {
+            // handle SSE messages
         });
-        app.listen(3001, () => {
-            console.log('SSE server running on port 3001');
-        });
+        console.log('SSE server running on port 3002');
     }
     else {
         // Use stdio transport for local development/desktop apps
