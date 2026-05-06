@@ -5,28 +5,38 @@ import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 import express from "express";
 import { z } from "zod";
 import fetch from 'node-fetch';
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { writeFileSync } from 'fs';
+import { MongoClient } from 'mongodb';
+// MongoDB connection
+const MONGODB_URI = process.env.MONGODB_URI || '';
+let remindersCollection;
+let eventsCollection;
+async function connectDB() {
+    const client = new MongoClient(MONGODB_URI);
+    await client.connect();
+    const db = client.db('smart-reminders');
+    remindersCollection = db.collection('reminders');
+    eventsCollection = db.collection('events');
+    console.log('Connected to MongoDB!');
+}
 [];
 const REMINDERS_FILE = 'C:/Users/popal/Smart Reminder App Development/01-mcp-prototype/reminders.json';
-function loadReminders() {
-    try {
-        if (existsSync(REMINDERS_FILE)) {
-            const data = readFileSync(REMINDERS_FILE, 'utf8');
-            return JSON.parse(data);
-        }
-    }
-    catch (error) {
-        console.error('Error loading reminders:', error);
-    }
-    return [];
+async function loadReminders() {
+    const reminders = await remindersCollection.find({}).toArray();
+    return reminders.map((r) => ({
+        id: r.id,
+        message: r.message,
+        triggerType: r.triggerType,
+        conditions: r.conditions,
+        createdAt: r.createdAt,
+        triggered: r.triggered
+    }));
 }
-function saveReminders(reminders) {
-    try {
-        writeFileSync(REMINDERS_FILE, JSON.stringify(reminders, null, 2), 'utf8');
-    }
-    catch (error) {
-        console.error('Error saving reminders:', error);
-    }
+async function saveReminder(reminder) {
+    await remindersCollection.insertOne(reminder);
+}
+async function deleteReminderById(id) {
+    await remindersCollection.deleteOne({ id });
 }
 // === CONSTANTS & HELPERS FOR NEARBY PLACES ===
 const NOMINATIM_USER_AGENT = 'SmartReminderApp/1.0 (Ogpro01@gmail.com)'; // replace with a real email
@@ -173,49 +183,22 @@ server.resource("hello-world", "hello://world", async (uri) => ({
 // Use ABSOLUTE path for shared storage between MCP Inspector and Claude
 const EVENTS_FILE = 'C:/Users/popal/Smart Reminder App Development/01-mcp-prototype/calendar-events.json';
 // Load events from file or use defaults
-function loadEvents() {
-    try {
-        if (existsSync(EVENTS_FILE)) {
-            const data = readFileSync(EVENTS_FILE, 'utf8');
-            return JSON.parse(data);
-        }
-    }
-    catch (error) {
-        console.error('Error loading events:', error);
-    }
-    // Default events if file doesn't exist
-    return [
-        {
-            id: 1,
-            title: "Team Standup Meeting",
-            date: "11-05-2025",
-            time: "10:00 AM",
-            duration: 30
-        },
-        {
-            id: 2,
-            title: "Lunch with Client",
-            date: "11-05-2025",
-            time: "12:30 PM",
-            duration: 60
-        },
-        {
-            id: 3,
-            title: "Project Review",
-            date: "11-06-2025",
-            time: "3:00 PM",
-            duration: 45
-        }
-    ];
+async function loadEvents() {
+    const events = await eventsCollection.find({}).toArray();
+    return events.map((e) => ({
+        id: e.id,
+        title: e.title,
+        date: e.date,
+        time: e.time,
+        duration: e.duration,
+        createdAt: e.createdAt
+    }));
 }
-// Save events to file
-function saveEvents(events) {
-    try {
-        writeFileSync(EVENTS_FILE, JSON.stringify(events, null, 2), 'utf8');
-    }
-    catch (error) {
-        console.error('Error saving events:', error);
-    }
+async function saveEvent(event) {
+    await eventsCollection.insertOne(event);
+}
+async function deleteEventById(id) {
+    await eventsCollection.deleteOne({ id });
 }
 // Define a calendar tool for managing events
 server.tool("calendar", "Manage calendar events - create, list, check availability, and delete events", {
@@ -228,7 +211,7 @@ server.tool("calendar", "Manage calendar events - create, list, check availabili
     duration: z.number().optional()
 }, async ({ action, title, date, time, duration }) => {
     // Load events from persistent storage
-    let events = loadEvents();
+    let events = await loadEvents();
     // Helper function to convert 12-hour time to 24-hour for calculations
     function convertTo24Hour(time12h) {
         const [time, modifier] = time12h.split(' ');
@@ -263,7 +246,7 @@ server.tool("calendar", "Manage calendar events - create, list, check availabili
                 duration
             };
             events.push(newEvent);
-            saveEvents(events);
+            // removed - using MongoDB now
             return {
                 content: [{
                         type: "text",
@@ -335,7 +318,7 @@ server.tool("calendar", "Manage calendar events - create, list, check availabili
                         }]
                 };
             }
-            saveEvents(events);
+            // removed - using MongoDB now
             return {
                 content: [{
                         type: "text",
@@ -652,7 +635,7 @@ server.tool("create_smart_reminder", "Create a reminder that can trigger based o
     if (conditions.time) {
         conditions.time = convertTo24Hour(conditions.time);
     }
-    const reminders = loadReminders();
+    const reminders = await loadReminders();
     const newId = reminders.length > 0 ? Math.max(...reminders.map(r => r.id)) + 1 : 1;
     const newReminder = {
         id: newId,
@@ -663,7 +646,7 @@ server.tool("create_smart_reminder", "Create a reminder that can trigger based o
         triggered: false
     };
     reminders.push(newReminder);
-    saveReminders(reminders);
+    // removed - using MongoDB now
     return {
         content: [{
                 type: "text",
@@ -704,7 +687,7 @@ async function getCurrentWeatherByCity(city) {
 }
 // check_reminders Tool 
 server.tool("check_reminders", "Check which smart reminders are due based on current time, location, and weather", {}, async () => {
-    const reminders = loadReminders();
+    const reminders = await loadReminders();
     const dueReminders = [];
     // ---- Get current context ----
     const now = new Date();
@@ -783,7 +766,7 @@ server.tool("check_reminders", "Check which smart reminders are due based on cur
             dueReminders.push(rem);
             // Optional: mark as triggered to prevent re-firing
             // rem.triggered = true;
-            // saveReminders(reminders);
+            // // removed - using MongoDB now
         }
     }
     // Current conditions for debugging
@@ -815,49 +798,67 @@ restApp.use((req, res, next) => {
     next();
 });
 // Get all reminders
-restApp.get("/api/reminders", (req, res) => {
-    res.json(loadReminders());
+restApp.get("/api/reminders", async (req, res) => {
+    try {
+        const reminders = await loadReminders();
+        res.json(reminders);
+    }
+    catch (err) {
+        res.status(500).json({ error: "Failed to load reminders" });
+    }
 });
 // Create a reminder
 restApp.post("/api/reminder/create", async (req, res) => {
-    const { message, triggerType, conditions } = req.body;
-    const reminders = loadReminders();
-    const newReminder = {
-        id: Date.now(),
-        message,
-        triggerType,
-        conditions: {
-            ...conditions,
-            time: conditions.time ? convertTo24Hour(conditions.time) : undefined,
-        },
-        createdAt: new Date().toISOString(),
-        triggered: false,
-    };
-    reminders.push(newReminder);
-    saveReminders(reminders);
-    res.json({ success: true, reminder: newReminder });
+    try {
+        const { message, triggerType, conditions } = req.body;
+        const newReminder = {
+            id: Date.now(),
+            message,
+            triggerType,
+            conditions: {
+                ...conditions,
+                time: conditions.time ? convertTo24Hour(conditions.time) : undefined,
+            },
+            createdAt: new Date().toISOString(),
+            triggered: false,
+        };
+        await saveReminder(newReminder);
+        res.json({ success: true, reminder: newReminder });
+    }
+    catch (err) {
+        res.status(500).json({ error: "Failed to create reminder" });
+    }
 });
 // Check which reminders are due
 restApp.post("/api/reminder/check", async (req, res) => {
-    const reminders = loadReminders();
-    const now = new Date();
-    const currentTime = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
-    const due = [];
-    for (const reminder of reminders) {
-        if (reminder.triggered)
-            continue;
-        if (reminder.conditions.time && reminder.conditions.time === currentTime) {
-            due.push(reminder);
+    try {
+        const reminders = await loadReminders();
+        const now = new Date();
+        const currentTime = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+        const due = [];
+        for (const reminder of reminders) {
+            if (reminder.triggered)
+                continue;
+            if (reminder.conditions.time && reminder.conditions.time === currentTime) {
+                due.push(reminder);
+            }
         }
+        res.json({ due });
     }
-    res.json({ due });
+    catch (err) {
+        res.status(500).json({ error: "Failed to check reminders" });
+    }
 });
 // Delete a reminder
-restApp.delete("/api/reminder/:id", (req, res) => {
-    const id = Number(req.params.id);
-    const reminders = loadReminders().filter((r) => r.id !== id);
-    saveReminders(reminders);
-    res.json({ success: true });
+restApp.delete("/api/reminder/:id", async (req, res) => {
+    try {
+        const id = Number(req.params.id);
+        await deleteReminderById(id);
+        res.json({ success: true });
+    }
+    catch (err) {
+        res.status(500).json({ error: "Failed to delete reminder" });
+    }
 });
 // Weather
 restApp.post("/api/weather", async (req, res) => {
@@ -918,9 +919,9 @@ restApp.post("/api/places", async (req, res) => {
     }
 });
 // Calendar - get all events
-restApp.get("/api/calendar", (req, res) => {
+restApp.get("/api/calendar", async (req, res) => {
     try {
-        const events = loadEvents();
+        const events = await loadEvents();
         res.json(events);
     }
     catch (err) {
@@ -928,14 +929,13 @@ restApp.get("/api/calendar", (req, res) => {
     }
 });
 // Calendar - create event
-restApp.post("/api/calendar", (req, res) => {
+restApp.post("/api/calendar", async (req, res) => {
     try {
         const { title, date, time, duration } = req.body;
         if (!title || !date || !time) {
             res.status(400).json({ error: "title, date, and time are required" });
             return;
         }
-        const events = loadEvents();
         const newEvent = {
             id: Date.now(),
             title,
@@ -944,8 +944,7 @@ restApp.post("/api/calendar", (req, res) => {
             duration: duration || 60,
             createdAt: new Date().toISOString(),
         };
-        events.push(newEvent);
-        saveEvents(events);
+        await saveEvent(newEvent);
         res.json({ success: true, event: newEvent });
     }
     catch (err) {
@@ -953,11 +952,10 @@ restApp.post("/api/calendar", (req, res) => {
     }
 });
 // Calendar - delete event
-restApp.delete("/api/calendar/:id", (req, res) => {
+restApp.delete("/api/calendar/:id", async (req, res) => {
     try {
         const id = Number(req.params.id);
-        const events = loadEvents().filter((e) => e.id !== id);
-        saveEvents(events);
+        await deleteEventById(id);
         res.json({ success: true });
     }
     catch (err) {
@@ -1042,6 +1040,8 @@ restApp.listen(3002, '0.0.0.0', () => console.log("REST API running on http://lo
 // ─────────────────────────────────────────────────────────────
 // === START SERVER ===
 async function main() {
+    // Connect to MongoDB first
+    await connectDB();
     // Choose transport based on command line arguments
     if (useSSE) {
         const app = express();
