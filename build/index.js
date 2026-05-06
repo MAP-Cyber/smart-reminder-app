@@ -1035,7 +1035,8 @@ Always respond with valid JSON only. No extra text outside the JSON.`;
         });
     }
 });
-restApp.listen(3002, '0.0.0.0', () => console.log("REST API running on http://localhost:3002"))
+const PORT = Number(process.env.PORT) || 3002;
+restApp.listen(PORT, '0.0.0.0', () => console.log(`REST API running on port ${PORT}`))
     .on('error', (err) => console.error("REST API error:", err));
 // ─────────────────────────────────────────────────────────────
 // === START SERVER ===
