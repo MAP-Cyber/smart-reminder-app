@@ -834,14 +834,90 @@ restApp.post("/api/reminder/check", async (req, res) => {
     try {
         const reminders = await loadReminders();
         const now = new Date();
-        const currentTime = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+        const currentHour = now.getHours();
+        const currentMinute = now.getMinutes();
         const due = [];
         for (const reminder of reminders) {
             if (reminder.triggered)
                 continue;
-            if (reminder.conditions.time && reminder.conditions.time === currentTime) {
-                due.push(reminder);
+            let isDue = false;
+            // Time check — within 5 minute window
+            if (reminder.conditions.time) {
+                const [remHour, remMinute] = reminder.conditions.time.split(':').map(Number);
+                const reminderMinutes = remHour * 60 + remMinute;
+                const currentMinutes = currentHour * 60 + currentMinute;
+                if (Math.abs(currentMinutes - reminderMinutes) <= 5) {
+                    isDue = true;
+                }
             }
+            // Weather check
+            if (reminder.conditions.weather && !reminder.conditions.time) {
+                try {
+                    const apiKey = process.env.OPENWEATHER_API_KEY;
+                    const locRes = await fetch("https://ipinfo.io/json");
+                    const locData = await locRes.json();
+                    const city = locData.city || 'New York';
+                    const weatherRes = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`);
+                    const weatherData = await weatherRes.json();
+                    const condition = weatherData.weather?.[0]?.description?.toLowerCase() || '';
+                    const temp = weatherData.main?.temp || 0;
+                    const weatherCond = reminder.conditions.weather.toLowerCase();
+                    if (weatherCond.includes('temp>')) {
+                        const threshold = Number(weatherCond.replace('temp>', ''));
+                        if (temp > threshold)
+                            isDue = true;
+                    }
+                    else if (weatherCond.includes('temp<')) {
+                        const threshold = Number(weatherCond.replace('temp<', ''));
+                        if (temp < threshold)
+                            isDue = true;
+                    }
+                    else if (condition.includes(weatherCond)) {
+                        isDue = true;
+                    }
+                }
+                catch (err) {
+                    console.error('Weather check failed:', err);
+                }
+            }
+            // Combination check — time AND weather
+            if (reminder.conditions.time && reminder.conditions.weather) {
+                const [remHour, remMinute] = reminder.conditions.time.split(':').map(Number);
+                const reminderMinutes = remHour * 60 + remMinute;
+                const currentMinutes = currentHour * 60 + currentMinute;
+                const timeMatch = Math.abs(currentMinutes - reminderMinutes) <= 5;
+                try {
+                    const apiKey = process.env.OPENWEATHER_API_KEY;
+                    const locRes = await fetch("https://ipinfo.io/json");
+                    const locData = await locRes.json();
+                    const city = locData.city || 'New York';
+                    const weatherRes = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`);
+                    const weatherData = await weatherRes.json();
+                    const condition = weatherData.weather?.[0]?.description?.toLowerCase() || '';
+                    const temp = weatherData.main?.temp || 0;
+                    const weatherCond = reminder.conditions.weather.toLowerCase();
+                    let weatherMatch = false;
+                    if (weatherCond.includes('temp>')) {
+                        const threshold = Number(weatherCond.replace('temp>', ''));
+                        if (temp > threshold)
+                            weatherMatch = true;
+                    }
+                    else if (weatherCond.includes('temp<')) {
+                        const threshold = Number(weatherCond.replace('temp<', ''));
+                        if (temp < threshold)
+                            weatherMatch = true;
+                    }
+                    else if (condition.includes(weatherCond)) {
+                        weatherMatch = true;
+                    }
+                    isDue = timeMatch && weatherMatch;
+                }
+                catch (err) {
+                    isDue = timeMatch;
+                }
+            }
+            if (isDue)
+                due.push(reminder);
         }
         res.json({ due });
     }
